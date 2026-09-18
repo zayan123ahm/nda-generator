@@ -1,0 +1,19 @@
+# Generated PDFs
+*.pdf
+
+# Dependencies (if a tool is ever added)
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Env / secrets
+.env
+.env.*

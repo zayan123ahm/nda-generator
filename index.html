@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NDA Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>NDA Generator</h1>
+    <p class="subtitle">Fill out the form and download a formatted NDA as a PDF.</p>
+
+    <form id="nda-form">
+      <fieldset>
+        <legend>Disclosing Party</legend>
+        <div class="field">
+          <label for="disclosing-party">Name</label>
+          <input type="text" id="disclosing-party" name="disclosingParty" required>
+        </div>
+        <div class="field">
+          <label for="disclosing-address">Address</label>
+          <textarea id="disclosing-address" name="disclosingAddress" rows="2" required></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Receiving Party</legend>
+        <div class="field">
+          <label for="receiving-party">Name</label>
+          <input type="text" id="receiving-party" name="receivingParty" required>
+        </div>
+        <div class="field">
+          <label for="receiving-address">Address</label>
+          <textarea id="receiving-address" name="receivingAddress" rows="2" required></textarea>
+        </div>
+      </fieldset>
+
+      <div class="grid">
+        <div class="field">
+          <label for="effective-date">Effective Date</label>
+          <input type="date" id="effective-date" name="effectiveDate" required>
+        </div>
+        <div class="field">
+          <label for="term">Term (years)</label>
+          <input type="number" id="term" name="term" min="1" max="20" value="2" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="state">Governing Law / State</label>
+        <input type="text" id="state" name="state" placeholder="e.g. California" required>
+      </div>
+
+      <button type="submit">Generate PDF</button>
+    </form>
+
+    <p class="disclaimer">Template for educational purposes, not legal advice.</p>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
