@@ -26,17 +26,40 @@ HTML, CSS, and JavaScript — no backend required.
 
 ## How to run
 
-This project uses ES modules, so open it through a local static server rather
-than `file://` (modules are blocked by CORS in some browsers when loaded
-directly from disk).
+This project uses ES modules, so it must be served over HTTP rather than opened
+directly as a `file://` path (browsers block module loading from disk).
 
-```bash
-# from the project directory
-python3 -m http.server 8000
-```
+1. Open a terminal in the project directory.
+2. Start a static server:
 
-Then visit <http://localhost:8000>. Alternatively, any static file server
-works (e.g. `npx serve`).
+   ```bash
+   python3 -m http.server 8000
+   ```
+
+3. Open <http://localhost:8000> in your browser.
+
+Any static file server works, for example `npx serve` or the VS Code Live
+Server extension. No build step or installation is required. The page loads
+jsPDF from a CDN, so an internet connection is needed on first load.
+
+## How to use the form
+
+1. **Disclosing Party** — enter the party's name, then their address. The
+   address can span multiple lines.
+2. **Receiving Party** — enter the receiving party's name and address.
+3. **Effective Date** — pick the date the agreement takes effect.
+4. **Term (years)** — enter a whole number from 1 to 100.
+5. **Governing Law / State** — enter the state whose law will govern, for
+   example `California`.
+6. Click **Generate PDF**. The file
+   `mutual-non-disclosure-agreement.pdf` is downloaded with the clauses,
+   page footers, and signature blocks filled in.
+
+All fields are required. Whitespace-only entries, impossible dates (such as
+February 30), and out-of-range terms are rejected with an inline message. Long
+names and addresses wrap automatically, and an unbroken token (for example a
+long email address) is split across lines so it stays inside the margins.
+
 
 ## Tech used
 
