@@ -16,11 +16,11 @@
         <legend>Disclosing Party</legend>
         <div class="field">
           <label for="disclosing-party">Name</label>
-          <input type="text" id="disclosing-party" name="disclosingParty" required>
+          <input type="text" id="disclosing-party" name="disclosingParty" maxlength="120" required>
         </div>
         <div class="field">
           <label for="disclosing-address">Address</label>
-          <textarea id="disclosing-address" name="disclosingAddress" rows="2" required></textarea>
+          <textarea id="disclosing-address" name="disclosingAddress" rows="2" maxlength="400" required></textarea>
         </div>
       </fieldset>
 
@@ -28,11 +28,11 @@
         <legend>Receiving Party</legend>
         <div class="field">
           <label for="receiving-party">Name</label>
-          <input type="text" id="receiving-party" name="receivingParty" required>
+          <input type="text" id="receiving-party" name="receivingParty" maxlength="120" required>
         </div>
         <div class="field">
           <label for="receiving-address">Address</label>
-          <textarea id="receiving-address" name="receivingAddress" rows="2" required></textarea>
+          <textarea id="receiving-address" name="receivingAddress" rows="2" maxlength="400" required></textarea>
         </div>
       </fieldset>
 
@@ -43,13 +43,13 @@
         </div>
         <div class="field">
           <label for="term">Term (years)</label>
-          <input type="number" id="term" name="term" min="1" max="20" value="2" required>
+          <input type="number" id="term" name="term" min="1" max="100" step="1" value="2" required>
         </div>
       </div>
 
       <div class="field">
         <label for="state">Governing Law / State</label>
-        <input type="text" id="state" name="state" placeholder="e.g. California" required>
+        <input type="text" id="state" name="state" maxlength="80" placeholder="e.g. California" required>
       </div>
 
       <button type="submit">Generate PDF</button>
