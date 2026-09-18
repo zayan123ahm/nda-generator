@@ -108,3 +108,17 @@ button:hover {
   color: #7a8794;
   text-align: center;
 }
+
+@media (max-width: 520px) {
+  body {
+    padding: 12px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -57,7 +57,7 @@ export const NDA_TEMPLATE = {
 export function renderTemplate(data) {
   const fill = (text) =>
     text.replace(/\{\{(\w+)\}\}/g, (match, key) =>
-      key in data ? data[key] : match
+      Object.prototype.hasOwnProperty.call(data, key) ? String(data[key]) : match
     );
 
   return {
